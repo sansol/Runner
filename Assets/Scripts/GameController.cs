@@ -3,12 +3,18 @@ using System.Collections;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
 
     public static GameController instance = null;
     private BoardController boardController;
+
+    public int playerLifePoints = 3;
+
+    private GameObject BGImage;
+    private Text gameOverText;
 
     // Use this for initialization
     void Awake()
@@ -28,17 +34,33 @@ public class GameController : MonoBehaviour
         InitGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     // Initialize the game
     void InitGame()
     {
         boardController.BoardSetup();
+        // load UI variables
+        BGImage = GameObject.Find("BGimage"); // finding by NAME!
+        gameOverText = GameObject.Find("TextRunOver").GetComponent<Text>();
+        // hide UI final elements
+        BGImage.SetActive(false);
     }
 
+    // Run has finished
+    public void GameOver(bool playerLost)
+    {
+        // TODO disable controls for the player and pass to controlling menus
+        // show message "you lost" or "you won"
+        if(playerLost) gameOverText.text = "Game Over";
+        else gameOverText.text = "VICTORIA!";
+        BGImage.SetActive(true);
+        // disable the game controller
+        enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
     // functions to save and delete game data to a file
     // TODO test. this function is currently not used

@@ -14,6 +14,7 @@ public class BoardController : MonoBehaviour {
     // to be able to state the prefabs
     public GameObject tileVertical;
     public GameObject tileCornerSE;
+    public GameObject tileArrival;
 
     private Dictionary<TileType, TileConfiguration> prefabTiles = new Dictionary<TileType, TileConfiguration>();
 
@@ -41,7 +42,8 @@ public class BoardController : MonoBehaviour {
 
             TileType.CornerSW,
             TileType.Horizontal,
-            TileType.Horizontal
+            TileType.Horizontal,
+            TileType.Finish
         }; 
         GenerateNewPathFromTileTypes(newPathTileTypes);
         LoadTrack(new Vector3(0.0f, 0.0f, 0.0f));
@@ -56,6 +58,7 @@ public class BoardController : MonoBehaviour {
         prefabTiles.Add(TileType.CornerSW, new TileConfiguration(TileType.CornerSW, tileCornerSE, new Vector3(0.0f, 90.0f, 0.0f)));
         prefabTiles.Add(TileType.CornerNE, new TileConfiguration(TileType.CornerNE, tileCornerSE, new Vector3(0.0f, 270.0f, 0.0f)));
         prefabTiles.Add(TileType.CornerNW, new TileConfiguration(TileType.CornerNW, tileCornerSE, new Vector3(0.0f, 180.0f, 0.0f)));
+        prefabTiles.Add(TileType.Finish, new TileConfiguration(TileType.Finish, tileArrival, new Vector3(0.0f, 0.0f, 0.0f)));
     }
 
     // given a set of tileTypes, generate a path
@@ -116,6 +119,7 @@ public class BoardController : MonoBehaviour {
                 if(direction == Direction.North) newPosition.x = newPosition.x - distance; // towards west
                 else newPosition.z = newPosition.z + distance; // towards north
                 break;
+            case TileType.Finish: // there's no exit. position the same since there shouldn't be anything
             default:
                 break;
         }
@@ -146,6 +150,7 @@ public class BoardController : MonoBehaviour {
                 if(direction == Direction.North) newDirection = Direction.East;
                 else newDirection = Direction.South;
                 break;
+            case TileType.Finish: // no new direction since there's no exit
             default:
                 break;
         }
@@ -225,7 +230,8 @@ public enum TileType
     CornerSE, // tile turns connecting south and east
     CornerSW, 
     CornerNE,
-    CornerNW // tile turns connecting north and east
+    CornerNW, // tile turns connecting north and east
+    Finish
 };
 
 public class TileConfiguration 
