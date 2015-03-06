@@ -11,12 +11,15 @@ public class PlayerControl : MonoBehaviour {
     public int wallDamage;
     public Text lifePointsText;
 
+    private Vector2 touchOrigin = -Vector2.one; // is outside the screen
+
     void Start()
     {
         //lifePoints = 10;
         updateLifeText();
     }
-	void Update()
+
+    void Update()
 	{
 /*		if (Input.GetButton ("Fire1") && Time.time > nextFire) 
 		{
@@ -24,14 +27,42 @@ public class PlayerControl : MonoBehaviour {
 		}*/
 	}
 	
-	void FixedUpdate () 
+	void FixedUpdate () // to be used instead of Update if using rigidbody for physics.
 	{
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-		
-		rigidbody.velocity = transform.forward * moveVertical * speed;
-		rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
-	}
+        float moveHorizontal = 0.0f;
+        float moveVertical = 0.0f;
+
+// TODO depending on the platform, different inputs should be allowed. simply uncomment the right one.
+//#if UNITY_EDITOR
+        // editor and with a keyboard
+		moveHorizontal = Input.GetAxis ("Horizontal");
+		moveVertical = Input.GetAxis ("Vertical");
+//#else
+        // mobile possibilities
+        // touch swipes
+/*        if(Input.touchCount > 0)
+        {
+            Touch myTouch = Input.touches[0];
+
+            if(myTouch.phase == TouchPhase.Began) touchOrigin = myTouch.position;
+            else if(myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
+            {
+                Vector2 touchEnd = myTouch.position;
+                float x = touchEnd.x - touchOrigin.x;
+                float y = touchEnd.y - touchOrigin.y;
+                touchOrigin.x = -1;
+                if(Mathf.Abs(x) > Mathf.Abs(y)) moveHorizontal = x > 0 ? 1: -1;
+                else moveVertical = y > 0 ? 1: -1;
+            }
+        }*/
+        // accelerometer
+/*        moveHorizontal = Input.acceleration.x;
+        moveVertical = Input.acceleration.y;
+*/
+//#endif
+        rigidbody.velocity = transform.forward * moveVertical * speed;
+        rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
+    }
 
     void OnTriggerEnter(Collider other) // check if the object touched other trigger objects
     {
