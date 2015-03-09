@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour {
     public int wallDamage;
     public Text lifePointsText;
 
-//    private Vector2 touchOrigin = -Vector2.one; // is outside the screen
+//    private Vector2 touchOrigin = -Vector2.one; // is outside the screen. used if "touch" input is used
     private Animator animator;
     private Transform renderTransform;
     private int currentDirection; // contains discrete direction of the player
@@ -84,8 +84,8 @@ public class PlayerControl : MonoBehaviour {
         string triggerString = "";
         float rotation = this.rigidbody.rotation.eulerAngles.y;
         // 0 to 359
-        int totalDirections = 4;
-        int degreesOffset = -45; // due to the isometic camera
+        int totalDirections = 8; // allowing now cardinals + diagonals
+        int degreesOffset = 0; // compensating the isometic camera
 
         int newDirection = (int) (((rotation + degreesOffset) % 360) * totalDirections / 360);
         Debug.Log(rotation + " " + newDirection);
@@ -97,13 +97,25 @@ public class PlayerControl : MonoBehaviour {
                     triggerString = "toN";
                     break;
                 case 1:
-                    triggerString = "toE";
+                    triggerString = "toNE";
                     break;
                 case 2:
-                    triggerString = "toS";
+                    triggerString = "toE";
                     break;
                 case 3:
+                    triggerString = "toSE";
+                    break;
+                case 4:
+                    triggerString = "toS";
+                    break;
+                case 5:
+                    triggerString = "toSW";
+                    break;
+                case 6:
                     triggerString = "toW";
+                    break;
+                case 7:
+                    triggerString = "toNW";
                     break;
             }
             currentDirection = newDirection;
@@ -111,7 +123,8 @@ public class PlayerControl : MonoBehaviour {
             animator.SetTrigger(triggerString);
         }
         // set the sprite to render facing camera
-        renderTransform.rotation = Camera.main.transform.rotation;
+//        renderTransform.rotation = Camera.main.transform.rotation;
+        renderTransform.rotation = Quaternion.identity;
     }
 
     void OnTriggerEnter(Collider other) // check if the object touched other trigger objects

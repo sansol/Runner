@@ -47,6 +47,7 @@ public class BoardController : MonoBehaviour {
         }; 
         GenerateNewPathFromTileTypes(newPathTileTypes);
         LoadTrack(new Vector3(0.0f, 0.0f, 0.0f));
+        SetIsoView();
     }
 
     void ConfigurePrefabs()
@@ -82,7 +83,7 @@ public class BoardController : MonoBehaviour {
             TileConfiguration currentTileConfig = prefabTiles[currentTile.tileType];
             GameObject toInstantiate = currentTileConfig.tilePrefab;
             GameObject instance = Instantiate(toInstantiate, currentPosition, Quaternion.identity) as GameObject;
-            instance.transform.SetParent(boardHolder.transform); // just so the hierarchy shows it nicely
+            instance.transform.SetParent(boardHolder.transform); // all tiles in one track object.
             instance.transform.Rotate(currentTileConfig.tileRotation);
             // calculate next position
             currentPosition = CalculateNextPosition(currentPosition, currentTileConfig.tileType, 10.0f, comingFrom); // 10.0f since the tiles are square with side 1
@@ -155,6 +156,12 @@ public class BoardController : MonoBehaviour {
                 break;
         }
         return newDirection;
+    }
+
+    // prepares the terrain to have an isometric view, so camera does not need to move 
+    void SetIsoView()
+    {
+        boardHolder.transform.Rotate(0.0f, 315.0f, 0.0f);
     }
 
     // to be able to save the path in file
