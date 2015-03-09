@@ -1,0 +1,927 @@
+fileFormatVersion: 2
+guid: 321d6bf7c5af24d9a88781fb7197af47
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mother_3_Link_sprite_sheets_by_Eeveefan93_0
+    21300002: Mother_3_Link_sprite_sheets_by_Eeveefan93_1
+    21300004: Mother_3_Link_sprite_sheets_by_Eeveefan93_2
+    21300006: Mother_3_Link_sprite_sheets_by_Eeveefan93_3
+    21300008: Mother_3_Link_sprite_sheets_by_Eeveefan93_4
+    21300010: Mother_3_Link_sprite_sheets_by_Eeveefan93_5
+    21300012: Mother_3_Link_sprite_sheets_by_Eeveefan93_6
+    21300014: Mother_3_Link_sprite_sheets_by_Eeveefan93_7
+    21300016: Mother_3_Link_sprite_sheets_by_Eeveefan93_8
+    21300018: Mother_3_Link_sprite_sheets_by_Eeveefan93_9
+    21300020: Mother_3_Link_sprite_sheets_by_Eeveefan93_10
+    21300022: Mother_3_Link_sprite_sheets_by_Eeveefan93_11
+    21300024: Mother_3_Link_sprite_sheets_by_Eeveefan93_12
+    21300026: Mother_3_Link_sprite_sheets_by_Eeveefan93_13
+    21300028: Mother_3_Link_sprite_sheets_by_Eeveefan93_14
+    21300030: Mother_3_Link_sprite_sheets_by_Eeveefan93_15
+    21300032: Mother_3_Link_sprite_sheets_by_Eeveefan93_16
+    21300034: Mother_3_Link_sprite_sheets_by_Eeveefan93_17
+    21300036: Mother_3_Link_sprite_sheets_by_Eeveefan93_18
+    21300038: Mother_3_Link_sprite_sheets_by_Eeveefan93_19
+    21300040: Mother_3_Link_sprite_sheets_by_Eeveefan93_20
+    21300042: Mother_3_Link_sprite_sheets_by_Eeveefan93_21
+    21300044: Mother_3_Link_sprite_sheets_by_Eeveefan93_22
+    21300046: Mother_3_Link_sprite_sheets_by_Eeveefan93_23
+    21300048: Mother_3_Link_sprite_sheets_by_Eeveefan93_24
+    21300050: Mother_3_Link_sprite_sheets_by_Eeveefan93_25
+    21300052: Mother_3_Link_sprite_sheets_by_Eeveefan93_26
+    21300054: Mother_3_Link_sprite_sheets_by_Eeveefan93_27
+    21300056: Mother_3_Link_sprite_sheets_by_Eeveefan93_28
+    21300058: Mother_3_Link_sprite_sheets_by_Eeveefan93_29
+    21300060: Mother_3_Link_sprite_sheets_by_Eeveefan93_30
+    21300062: Mother_3_Link_sprite_sheets_by_Eeveefan93_31
+    21300064: Mother_3_Link_sprite_sheets_by_Eeveefan93_32
+    21300066: Mother_3_Link_sprite_sheets_by_Eeveefan93_33
+    21300068: Mother_3_Link_sprite_sheets_by_Eeveefan93_34
+    21300070: Mother_3_Link_sprite_sheets_by_Eeveefan93_35
+    21300072: Mother_3_Link_sprite_sheets_by_Eeveefan93_36
+    21300074: Mother_3_Link_sprite_sheets_by_Eeveefan93_37
+    21300076: Mother_3_Link_sprite_sheets_by_Eeveefan93_38
+    21300078: Mother_3_Link_sprite_sheets_by_Eeveefan93_39
+    21300080: Mother_3_Link_sprite_sheets_by_Eeveefan93_40
+    21300082: Mother_3_Link_sprite_sheets_by_Eeveefan93_41
+    21300084: Mother_3_Link_sprite_sheets_by_Eeveefan93_42
+    21300086: Mother_3_Link_sprite_sheets_by_Eeveefan93_43
+    21300088: Mother_3_Link_sprite_sheets_by_Eeveefan93_44
+    21300090: Mother_3_Link_sprite_sheets_by_Eeveefan93_45
+    21300092: Mother_3_Link_sprite_sheets_by_Eeveefan93_46
+    21300094: Mother_3_Link_sprite_sheets_by_Eeveefan93_47
+    21300096: Mother_3_Link_sprite_sheets_by_Eeveefan93_48
+    21300098: Mother_3_Link_sprite_sheets_by_Eeveefan93_49
+    21300100: Mother_3_Link_sprite_sheets_by_Eeveefan93_50
+    21300102: Mother_3_Link_sprite_sheets_by_Eeveefan93_51
+    21300104: Mother_3_Link_sprite_sheets_by_Eeveefan93_52
+    21300106: Mother_3_Link_sprite_sheets_by_Eeveefan93_53
+    21300108: Mother_3_Link_sprite_sheets_by_Eeveefan93_54
+    21300110: Mother_3_Link_sprite_sheets_by_Eeveefan93_55
+    21300112: Mother_3_Link_sprite_sheets_by_Eeveefan93_56
+    21300114: Mother_3_Link_sprite_sheets_by_Eeveefan93_57
+    21300116: Mother_3_Link_sprite_sheets_by_Eeveefan93_58
+    21300118: Mother_3_Link_sprite_sheets_by_Eeveefan93_59
+    21300120: Mother_3_Link_sprite_sheets_by_Eeveefan93_60
+    21300122: Mother_3_Link_sprite_sheets_by_Eeveefan93_61
+    21300124: Mother_3_Link_sprite_sheets_by_Eeveefan93_62
+    21300126: Mother_3_Link_sprite_sheets_by_Eeveefan93_63
+    21300128: Mother_3_Link_sprite_sheets_by_Eeveefan93_64
+    21300130: Mother_3_Link_sprite_sheets_by_Eeveefan93_65
+    21300132: Mother_3_Link_sprite_sheets_by_Eeveefan93_66
+    21300134: Mother_3_Link_sprite_sheets_by_Eeveefan93_67
+    21300136: Mother_3_Link_sprite_sheets_by_Eeveefan93_68
+    21300138: Mother_3_Link_sprite_sheets_by_Eeveefan93_69
+    21300140: Mother_3_Link_sprite_sheets_by_Eeveefan93_70
+    21300142: Mother_3_Link_sprite_sheets_by_Eeveefan93_71
+    21300144: Mother_3_Link_sprite_sheets_by_Eeveefan93_72
+    21300146: Mother_3_Link_sprite_sheets_by_Eeveefan93_73
+    21300148: Mother_3_Link_sprite_sheets_by_Eeveefan93_74
+    21300150: Mother_3_Link_sprite_sheets_by_Eeveefan93_75
+    21300152: Mother_3_Link_sprite_sheets_by_Eeveefan93_76
+    21300154: Mother_3_Link_sprite_sheets_by_Eeveefan93_77
+    21300156: Mother_3_Link_sprite_sheets_by_Eeveefan93_78
+    21300158: Mother_3_Link_sprite_sheets_by_Eeveefan93_79
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 191
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 191
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 191
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 191
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 191
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 191
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_6
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 191
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_7
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 191
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_8
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 191
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_9
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 191
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 191
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 191
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 165
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_13
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 165
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 165
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 165
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_16
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 165
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_17
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 165
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_18
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 164
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_19
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 164
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_20
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 164
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_21
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 164
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_22
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 164
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_23
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 164
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 134
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_25
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 133
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_26
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 133
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_27
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 133
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_28
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 133
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_29
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_30
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 105
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_31
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 104
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_32
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 104
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_33
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 104
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_34
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 104
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_35
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 104
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_36
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 104
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_37
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 104
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_38
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 104
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_39
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 104
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_40
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 104
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_41
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 104
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_42
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 104
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_43
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 104
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_44
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 104
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_45
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 104
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_46
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 77
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_47
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 77
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_48
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 77
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_49
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 77
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_50
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 78
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_51
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 78
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_52
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 78
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_53
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 78
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 78
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_55
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 78
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_56
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 78
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_57
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 78
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_58
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 78
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_59
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 78
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_60
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 78
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_61
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 78
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_62
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 45
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_63
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 45
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_64
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 45
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_65
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 45
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_66
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 45
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_67
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 28
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_68
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 30
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_69
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 32
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_70
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 31
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_71
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_72
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 29
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_73
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 30
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_74
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_75
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_76
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_77
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_78
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mother_3_Link_sprite_sheets_by_Eeveefan93_79
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 4
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

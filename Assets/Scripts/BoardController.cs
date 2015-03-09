@@ -75,7 +75,7 @@ public class BoardController : MonoBehaviour {
     {
         // last tile (used to add the new one)
         Vector3 currentPosition = origin;
-        Direction comingFrom = Direction.South; // the game starts as if the runner came from the south
+        TileDirection comingFrom = TileDirection.South; // the game starts as if the runner came from the south
         foreach( Tile currentTile in currentPath)
         {
             // load the prefab according to the tile
@@ -90,33 +90,33 @@ public class BoardController : MonoBehaviour {
         }
     }
     // calculates the position for the next tile
-    Vector3 CalculateNextPosition(Vector3 currentPosition, TileType currentTileType, float distance, Direction direction)
+    Vector3 CalculateNextPosition(Vector3 currentPosition, TileType currentTileType, float distance, TileDirection direction)
     {
         Vector3 newPosition = new Vector3(currentPosition.x, currentPosition.y, currentPosition.z);
         switch (currentTileType)
         {
             case TileType.Vertical: // either we are coming from the south or the north
-                if(direction == Direction.North) newPosition.z = newPosition.z - distance;
+                if(direction == TileDirection.North) newPosition.z = newPosition.z - distance;
                 else newPosition.z = newPosition.z + distance;
                 break;
             case TileType.Horizontal:
-                if(direction == Direction.East) newPosition.x = newPosition.x - distance;
+                if(direction == TileDirection.East) newPosition.x = newPosition.x - distance;
                 else newPosition.x = newPosition.x + distance;
                 break;
             case TileType.CornerSE:
-                if(direction == Direction.South) newPosition.x = newPosition.x + distance; // towards east
+                if(direction == TileDirection.South) newPosition.x = newPosition.x + distance; // towards east
                 else newPosition.z = newPosition.z - distance; // towards south
                 break;
             case TileType.CornerSW:
-                if(direction == Direction.South) newPosition.x = newPosition.x - distance; // towards west
+                if(direction == TileDirection.South) newPosition.x = newPosition.x - distance; // towards west
                 else newPosition.z = newPosition.z - distance; // towards south
                 break;
             case TileType.CornerNE:
-                if(direction == Direction.North) newPosition.x = newPosition.x + distance; // towards east
+                if(direction == TileDirection.North) newPosition.x = newPosition.x + distance; // towards east
                 else newPosition.z = newPosition.z + distance; // towards north
                 break;
             case TileType.CornerNW:
-                if(direction == Direction.North) newPosition.x = newPosition.x - distance; // towards west
+                if(direction == TileDirection.North) newPosition.x = newPosition.x - distance; // towards west
                 else newPosition.z = newPosition.z + distance; // towards north
                 break;
             case TileType.Finish: // there's no exit. position the same since there shouldn't be anything
@@ -126,29 +126,29 @@ public class BoardController : MonoBehaviour {
         return newPosition;
     }
     // calculates the new direction the runner will be after applying the tile (direction for the new position!)
-    Direction CalculateNextDirection(Direction direction, TileType currentTileType)
+    TileDirection CalculateNextDirection(TileDirection direction, TileType currentTileType)
     {
-        Direction newDirection = direction;
+        TileDirection newDirection = direction;
         switch (currentTileType)
         {
             case TileType.Vertical:
             case TileType.Horizontal: // direction doesn't change since the tiles go straight
                 break;
             case TileType.CornerSE: // coming from either south or east
-                if(direction == Direction.South) newDirection = Direction.West;
-                else newDirection = Direction.North;
+                if(direction == TileDirection.South) newDirection = TileDirection.West;
+                else newDirection = TileDirection.North;
                 break;
             case TileType.CornerSW: // from south or west
-                if(direction == Direction.South) newDirection = Direction.East;
-                else newDirection = Direction.North;
+                if(direction == TileDirection.South) newDirection = TileDirection.East;
+                else newDirection = TileDirection.North;
                 break;
             case TileType.CornerNE:
-                if(direction == Direction.North) newDirection = Direction.West;
-                else newDirection = Direction.South;
+                if(direction == TileDirection.North) newDirection = TileDirection.West;
+                else newDirection = TileDirection.South;
                 break;
             case TileType.CornerNW:
-                if(direction == Direction.North) newDirection = Direction.East;
-                else newDirection = Direction.South;
+                if(direction == TileDirection.North) newDirection = TileDirection.East;
+                else newDirection = TileDirection.South;
                 break;
             case TileType.Finish: // no new direction since there's no exit
             default:
@@ -248,7 +248,7 @@ public class TileConfiguration
     }
 }
 
-enum Direction
+enum TileDirection
 {
     South,
     North,

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -11,10 +12,19 @@ public class PlayerControl : MonoBehaviour {
     public int wallDamage;
     public Text lifePointsText;
 
-    private Vector2 touchOrigin = -Vector2.one; // is outside the screen
+//    private Vector2 touchOrigin = -Vector2.one; // is outside the screen
+    private Animator animator;
+    private Transform renderTransform;
+    private int currentDirection; // contains discrete direction of the player
 
     void Start()
     {
+        // get the child with the animation
+        GameObject animationHolder = transform.Find("AnimationHolder").gameObject;
+        // gets the Animator and the transform to change them when changing animations
+        animator = animationHolder.GetComponent<Animator>();
+        renderTransform = animationHolder.transform;
+
         //lifePoints = 10;
         updateLifeText();
     }
@@ -62,6 +72,46 @@ public class PlayerControl : MonoBehaviour {
 //#endif
         rigidbody.velocity = transform.forward * moveVertical * speed;
         rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
+
+        // change the animation to the closest direction available
+        setAnimation(); //
+        // TODO understand if the direction should be fixed as well
+    }
+    
+    // calculates the best animation given the current rotation of the player
+    void setAnimation()
+    {
+        string triggerString = "";
+        float rotation = this.rigidbody.rotation.eulerAngles.y;
+        // 0 to 359
+        int totalDirections = 4;
+        int degreesOffset = -45; // due to the isometic camera
+
+        int newDirection = (int) (((rotation + degreesOffset) % 360) * totalDirections / 360);
+        Debug.Log(rotation + " " + newDirection);
+        if(currentDirection != newDirection)
+        {
+            switch(newDirection)
+            {
+                case 0:
+                    triggerString = "toN";
+                    break;
+                case 1:
+                    triggerString = "toE";
+                    break;
+                case 2:
+                    triggerString = "toS";
+                    break;
+                case 3:
+                    triggerString = "toW";
+                    break;
+            }
+            currentDirection = newDirection;
+            // update the animator
+            animator.SetTrigger(triggerString);
+        }
+        // set the sprite to render facing camera
+        renderTransform.rotation = Camera.main.transform.rotation;
     }
 
     void OnTriggerEnter(Collider other) // check if the object touched other trigger objects
