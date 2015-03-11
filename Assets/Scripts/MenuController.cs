@@ -29,6 +29,7 @@ public class MenuController : MonoBehaviour {
     // shows the given menu screen while hiding the others
     void ShowMenuScene (MenuScreenType menuScreenToShow)
     {
+        Debug.Log("c");
         // loop all menu screens
         foreach (KeyValuePair<MenuScreenType, GameObject> pair in menuScreens)
         {
@@ -49,15 +50,18 @@ public class MenuController : MonoBehaviour {
         Application.LoadLevel(sceneName);
     }
 
-	// Use this for initialization
-	void Start () 
+	// Use this for reference setting
+	void Awake ()
     {
 	    // get references to the different ui parts
         menuScreens.Add(MenuScreenType.Entrance, GameObject.Find("CanvasEntrance"));
         menuScreens.Add(MenuScreenType.AfterRace, GameObject.Find("CanvasAfterRace"));
         menuScreens.Add(MenuScreenType.Share, GameObject.Find("CanvasShare"));
     }
-	
+    // Use this for initialization
+    void Start ()
+    {
+    }
 	// Update is called once per frame
 	void Update () {
 	

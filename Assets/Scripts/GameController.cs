@@ -31,13 +31,14 @@ public class GameController : MonoBehaviour
             instance.InitCurrentScene(); // we tell the right instance to initialize the scene
         }
         DontDestroyOnLoad(this);
+
+        // get other necessary components
+        boardController = GetComponent<BoardController>(); // boardcontroller is left here since we might use it on the menu scene in the background
+        menuController = GetComponent<MenuController>();
     }
     // Start is called after all the Awakes. this is called JUST for the first instance
     void Start()
     {
-        // get other necessary components
-        boardController = GetComponent<BoardController>(); // boardcontroller is left here since we might use it on the menu scene in the background
-        menuController = GetComponent<MenuController>();
         // initialize the scene
         InitCurrentScene();
     }
@@ -53,6 +54,8 @@ public class GameController : MonoBehaviour
             case "Menu":
                 // TODO load right menu depending on the available information
                 menuController.SetMenu(MenuScreenType.Entrance);
+                Debug.Log("dd");
+
                 break;
         }
     }
