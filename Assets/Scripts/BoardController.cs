@@ -20,6 +20,7 @@ public class BoardController : MonoBehaviour {
 
     public void BoardSetup()
     {
+        boardHolder = GameObject.Find("Track"); // the track is destroyed between scenes, so we reload it
         ConfigurePrefabs();
         TileType[] newPathTileTypes = {
             TileType.Vertical,

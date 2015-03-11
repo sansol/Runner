@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
     private Animator animator;
     private Transform renderTransform;
     private int currentDirection; // contains discrete direction of the player
+    private GameController gameController;
 
     void Start()
     {
@@ -24,8 +25,10 @@ public class PlayerControl : MonoBehaviour {
         // gets the Animator and the transform to change them when changing animations
         animator = animationHolder.GetComponent<Animator>();
         renderTransform = animationHolder.transform;
+        // get external references
+        GameObject gameControllerObject = GameObject.Find("GameController");
+        gameController = gameControllerObject.GetComponent<GameController>();
 
-        //lifePoints = 10;
         updateLifeText();
     }
 
@@ -70,12 +73,16 @@ public class PlayerControl : MonoBehaviour {
         moveVertical = Input.acceleration.y;
 */
 //#endif
-        rigidbody.velocity = transform.forward * moveVertical * speed;
-        rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
 
-        // change the animation to the closest direction available
-        setAnimation(); //
-        // TODO understand if the direction should be fixed as well
+        if(enabled){
+            // move the runner
+            rigidbody.velocity = transform.forward * moveVertical * speed;
+            rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
+
+            // change the animation to the closest direction available
+            setAnimation(); //
+            // TODO understand if the direction should be fixed as well
+        }
     }
     
     // calculates the best animation given the current rotation of the player
@@ -88,7 +95,7 @@ public class PlayerControl : MonoBehaviour {
         int degreesOffset = 0; // compensating the isometic camera
 
         int newDirection = (int) (((rotation + degreesOffset) % 360) * totalDirections / 360);
-        Debug.Log(rotation + " " + newDirection);
+//        Debug.Log(rotation + " " + newDirection);
         if(currentDirection != newDirection)
         {
             switch(newDirection)
@@ -132,7 +139,7 @@ public class PlayerControl : MonoBehaviour {
         switch (other.gameObject.tag)
         {
             case "Finish": // final object
-                GameController.instance.GameOver(false);
+                gameController.GameOver(false);
                 break;
             default:
                 break;
@@ -158,7 +165,7 @@ public class PlayerControl : MonoBehaviour {
     {
         if (lifePoints <= 0)
         {
-            GameController.instance.GameOver(true);
+            gameController.GameOver(true);
         }
     }
 
