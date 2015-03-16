@@ -7,15 +7,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameController : MonoBehaviour
 {
-
     public static GameController instance = null;
     private BoardController boardController;
-    private MenuController menuController;
 
     public int playerLifePoints = 3;
 
     private GameObject BGImage;
     private Text gameOverText;
+
+    public bool raceFinished = false; // if true, the race JUST finished
 
     // Use this for initialization
     void Awake()
@@ -24,23 +24,23 @@ public class GameController : MonoBehaviour
         if (instance == null) // if it is the first instance
         {
             instance = this;
+            DontDestroyOnLoad(this);
         } 
         else if (instance != this) // if we aren't the instance, suicide but call the right init
         {
-            Destroy(gameObject); // will destroy itself and not even call its Start()
-            instance.InitCurrentScene(); // we tell the right instance to initialize the scene
+            // we don't destroy the object because we want to call initScene and that must be done in Start
         }
-        DontDestroyOnLoad(this);
 
-        // get other necessary components
-        boardController = GetComponent<BoardController>(); // boardcontroller is left here since we might use it on the menu scene in the background
-        menuController = GetComponent<MenuController>();
+        // init references
+        boardController = GetComponent<BoardController>();
     }
     // Start is called after all the Awakes. this is called JUST for the first instance
     void Start()
     {
-        // initialize the scene
-        InitCurrentScene();
+        // initialize the scene from the right instance (might not be this one)
+        instance.InitCurrentScene(); // must be here otherwise the references might not have been initialized yet
+        if(instance != this)
+            Destroy(gameObject); // destroy can't be on awake. if it were it wouldn't call start.
     }
 
     // initalizes the right scene
@@ -51,11 +51,7 @@ public class GameController : MonoBehaviour
             case "Race":
                 InitRace();
                 break;
-            case "Menu":
-                // TODO load right menu depending on the available information
-                menuController.SetMenu(MenuScreenType.Entrance);
-                Debug.Log("dd");
-
+            case "Menu": // Menucontroller decides this now
                 break;
         }
     }
@@ -63,25 +59,34 @@ public class GameController : MonoBehaviour
     // Initialize the race, setting board etc.
     void InitRace()
     {
-        boardController.BoardSetup();
-        // load UI variables
+        // set board
+        boardController.BoardSetup(0);
+        // set current UI
         BGImage = GameObject.Find("BGimage"); // finding by NAME!
         this.gameOverText = GameObject.Find("TextRunOver").GetComponent<Text>();
-        // hide UI final elements
         BGImage.SetActive(false);
+        // set start game
+        raceFinished = false;
     }
 
     // Run has finished
     public void GameOver(bool playerLost)
     {
-        Debug.Log("GameOver "+ this.GetInstanceID());
-        // TODO disable controls for the player and pass to controlling menus
+        // TODO disable controls for the player
+        // TODO show X seconds message
         // show message "you lost" or "you won"
         if(playerLost) this.gameOverText.text = "Game Over";
         else gameOverText.text = "VICTORIA!";
         BGImage.SetActive(true);
         // disable the game controller
         enabled = false;
+        raceFinished = true; // it just finished
+        // load menu
+        StartMenus();
+    }
+    void StartMenus()
+    {
+        Application.LoadLevel("Menu");
     }
 
     // Update is called once per frame
@@ -137,6 +142,5 @@ class GameStatusData
     // TODO think: should probably be some other class to just store the data, not a Path directy.
     public Path currentPath;
 }
-
 
 

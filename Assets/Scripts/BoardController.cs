@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class BoardController : MonoBehaviour {
 
-    private Path currentPath = new Path();
+    private Path currentPath;
 
     // object to hold the whole path
     public GameObject boardHolder;
@@ -16,39 +16,51 @@ public class BoardController : MonoBehaviour {
     public GameObject tileCornerSE;
     public GameObject tileArrival;
 
+    private int currentDiffLevel = -1; // goes from 0 to... infinity. init to -1 so any level can start it
     private Dictionary<TileType, TileConfiguration> prefabTiles = new Dictionary<TileType, TileConfiguration>();
+    private bool prefabConfigured = false;
 
-    public void BoardSetup()
+    public void BoardSetup(int difficultyLevel)
     {
+        // get holder for the track
         boardHolder = GameObject.Find("Track"); // the track is destroyed between scenes, so we reload it
-        ConfigurePrefabs();
-        TileType[] newPathTileTypes = {
-            TileType.Vertical,
-            TileType.CornerSW,
-            TileType.CornerSE,
-            TileType.Vertical,
-            TileType.CornerNE,
-
-            TileType.Horizontal,
-            TileType.CornerNW,
-            TileType.CornerSE,
-            TileType.Horizontal,
-            TileType.CornerNW,
-
-            TileType.Vertical,
-            TileType.CornerSW,
-            TileType.CornerSE,
-            TileType.CornerNW,
-            TileType.CornerNE,
-
-            TileType.CornerSW,
-            TileType.Horizontal,
-            TileType.Horizontal,
-            TileType.Finish
-        }; 
-        GenerateNewPathFromTileTypes(newPathTileTypes);
-        LoadTrack(new Vector3(0.0f, 0.0f, 0.0f));
+        // configure the tiles from the prefabs
+        if(!prefabConfigured)
+            ConfigurePrefabs();
+        // load level depending on difficulty
+        if(currentDiffLevel != difficultyLevel)
+        {
+            //TODO properly load different levels. now always loads the same one
+            TileType[] newPathTileTypes = {
+                TileType.Vertical,
+                TileType.CornerSW,
+                TileType.CornerSE,
+                TileType.Vertical,
+                TileType.CornerNE,
+                
+                TileType.Horizontal,
+                TileType.CornerNW,
+                TileType.CornerSE,
+                TileType.Horizontal,
+                TileType.CornerNW,
+                
+                TileType.Vertical,
+                TileType.CornerSW,
+                TileType.CornerSE,
+                TileType.CornerNW,
+                TileType.CornerNE,
+                
+                TileType.CornerSW,
+                TileType.Horizontal,
+                TileType.Horizontal,
+                TileType.Finish
+            }; 
+            GenerateNewPathFromTileTypes(newPathTileTypes);
+            currentDiffLevel = difficultyLevel;
+        }
+        LoadTrack(new Vector3(0.0f, 0.0f, 0.0f)); // load current path
         SetIsoView();
+
     }
 
     void ConfigurePrefabs()
@@ -61,11 +73,13 @@ public class BoardController : MonoBehaviour {
         prefabTiles.Add(TileType.CornerNE, new TileConfiguration(TileType.CornerNE, tileCornerSE, new Vector3(0.0f, 270.0f, 0.0f)));
         prefabTiles.Add(TileType.CornerNW, new TileConfiguration(TileType.CornerNW, tileCornerSE, new Vector3(0.0f, 180.0f, 0.0f)));
         prefabTiles.Add(TileType.Finish, new TileConfiguration(TileType.Finish, tileArrival, new Vector3(0.0f, 0.0f, 0.0f)));
+        prefabConfigured = true;
     }
 
     // given a set of tileTypes, generate a path
     void GenerateNewPathFromTileTypes(TileType[] tileTypeList)
     {
+        currentPath = new Path();
         foreach(TileType currentTileType in tileTypeList)
         {
             currentPath.AddTile(new Tile(currentTileType));
@@ -263,3 +277,4 @@ enum TileDirection
     East,
     West
 }
+
