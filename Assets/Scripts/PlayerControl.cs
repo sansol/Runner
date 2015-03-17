@@ -7,10 +7,10 @@ public class PlayerControl : MonoBehaviour {
 
     // TODO the player could keep on losing life while in contact with wall. use oncollisionExit and the Update functions.
 
-	public float speed;
-    public int lifePoints; // TODO this info could be in the gamecontroller, saving it there between "levels" or "runs"
-    public int wallDamage;
-    public Text lifePointsText;
+    public float speed;
+    public Damage damageList;
+    public Counter currentScore = new Counter();
+    public Counter currentLife = new Counter();
 
 //    private Vector2 touchOrigin = -Vector2.one; // is outside the screen. used if "touch" input is used
     private Animator animator;
@@ -30,17 +30,13 @@ public class PlayerControl : MonoBehaviour {
         GameObject gameControllerObject = GameObject.Find("GameController");
         gameController = gameControllerObject.GetComponent<GameController>();
 
-        playerInputEnabled = true; // allow player to control the player object
+        currentLife.setDisplayText("You have ", " life left");
 
-        updateLifeText();
+        playerInputEnabled = true; // allow player to control the player object
     }
 
     void Update()
 	{
-/*		if (Input.GetButton ("Fire1") && Time.time > nextFire) 
-		{
-			//actions taken by the player like jumping or shooting (if any)
-		}*/
 	}
 	
 	void FixedUpdate () // to be used instead of Update if using rigidbody for physics.
@@ -132,7 +128,6 @@ public class PlayerControl : MonoBehaviour {
             animator.SetTrigger(triggerString);
         }
         // set the sprite to render facing camera
-//        renderTransform.rotation = Camera.main.transform.rotation;
         renderTransform.rotation = Quaternion.identity;
     }
 
@@ -146,6 +141,8 @@ public class PlayerControl : MonoBehaviour {
             case "Tile": // each of the tiles
                 gameController.passedTiles ++;
                 DestroyObject(other.gameObject);
+                // and one more point
+                currentScore.Increase();
                 break;
             default:
                 break;
@@ -157,19 +154,20 @@ public class PlayerControl : MonoBehaviour {
         switch (other.gameObject.tag)
         {
             case "Wall": // a wall. hurts the player by wallDamage
-                lifePoints -= wallDamage; 
+                Debug.Log(" wall " + damageList.wall);
+                currentLife.Decrease(damageList.wall);
                 break;
+            // TODO add enemy
             default:
                 break;
         }
 
-        updateLifeText();
         checkGameOver();
     }
 
     void checkGameOver()
     {
-        if (lifePoints <= 0)
+        if (currentLife.points <= 0)
         {
             // disable player controls. NOT the object
             playerInputEnabled = false;
@@ -177,9 +175,42 @@ public class PlayerControl : MonoBehaviour {
             gameController.GameOver(true);
         }
     }
+}
 
-    void updateLifeText()
+// holds a counter, with initial points and text referene visible in editor
+[Serializable]
+public class Counter
+{
+    public Text pointsTextPanel;
+    string preceedingText = ""; // text preceeding the points when displayed
+    string followingText = ""; // text following the points when displayed
+    public int points = 1;
+
+    public void setDisplayText (string pre, string post)
     {
-        lifePointsText.text = "Life left: " + lifePoints;
+        preceedingText = pre;
+        followingText = post;
+        UpdateGraphics();
     }
+    public void Increase(int newPoints = 1)
+    {
+        points += newPoints;
+        UpdateGraphics();
+    }
+    public void Decrease(int newPoints = 1)
+    {
+        points -= newPoints;
+        UpdateGraphics();
+    }
+    void UpdateGraphics()
+    {
+        pointsTextPanel.text = preceedingText + points + followingText;
+    }
+}
+// holds the damages done by different type of objects. visible in editor
+[Serializable]
+public class Damage
+{
+    public int wall = 1;
+    public int enemyDamage = 1;
 }
