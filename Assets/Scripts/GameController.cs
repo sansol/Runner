@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
 
     public bool raceFinished = false; // if true, the race JUST finished
 
+    public int passedTiles; // tiles the Player has been through
+    private int previouslyPassedTiles;
+
     // Use this for initialization
     void Awake()
     {
@@ -59,8 +62,12 @@ public class GameController : MonoBehaviour
     // Initialize the race, setting board etc.
     void InitRace()
     {
+        // initialize variables
+        passedTiles = 0;
+        previouslyPassedTiles = 0;
         // set board
-        boardController.BoardSetup(0);
+        int raceId = 0;
+        boardController.BoardInitialSetup(raceId);
         // set current UI
         BGImage = GameObject.Find("BGimage"); // finding by NAME!
         this.gameOverText = GameObject.Find("TextRunOver").GetComponent<Text>();
@@ -78,8 +85,6 @@ public class GameController : MonoBehaviour
         if(playerLost) this.gameOverText.text = "Game Over";
         else gameOverText.text = "VICTORIA!";
         BGImage.SetActive(true);
-        // disable the game controller
-        enabled = false;
         raceFinished = true; // it just finished
         // load menu
         StartMenus();
@@ -92,6 +97,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if on race, check for generating more track
+        if(!raceFinished && previouslyPassedTiles < passedTiles)
+        {
+            boardController.UpdateBoard(passedTiles);
+            previouslyPassedTiles = passedTiles;
+        }
     }
 
     // functions to save and delete game data to a file

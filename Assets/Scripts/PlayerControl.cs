@@ -16,7 +16,8 @@ public class PlayerControl : MonoBehaviour {
     private Animator animator;
     private Transform renderTransform;
     private int currentDirection; // contains discrete direction of the player
-    private GameController gameController;
+    private GameController gameController; // reference to the gameController
+    private bool playerInputEnabled;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class PlayerControl : MonoBehaviour {
         // get external references
         GameObject gameControllerObject = GameObject.Find("GameController");
         gameController = gameControllerObject.GetComponent<GameController>();
+
+        playerInputEnabled = true; // allow player to control the player object
 
         updateLifeText();
     }
@@ -45,6 +48,7 @@ public class PlayerControl : MonoBehaviour {
         float moveHorizontal = 0.0f;
         float moveVertical = 0.0f;
 
+        if(playerInputEnabled){
 // TODO depending on the platform, different inputs should be allowed. simply uncomment the right one.
 //#if UNITY_EDITOR
         // editor and with a keyboard
@@ -73,16 +77,14 @@ public class PlayerControl : MonoBehaviour {
         moveVertical = Input.acceleration.y;
 */
 //#endif
-
-        if(enabled){
-            // move the runner
-            rigidbody.velocity = transform.forward * moveVertical * speed;
-            rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
-
-            // change the animation to the closest direction available
-            setAnimation(); //
-            // TODO understand if the direction should be fixed as well
         }
+        // move the runner
+        rigidbody.velocity = transform.forward * moveVertical * speed;
+        rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
+
+        // change the animation to the closest direction available
+        setAnimation(); //
+        // TODO understand if the direction should be fixed as well (matching animation)
     }
     
     // calculates the best animation given the current rotation of the player
@@ -138,8 +140,12 @@ public class PlayerControl : MonoBehaviour {
     {
         switch (other.gameObject.tag)
         {
-            case "Finish": // final object
+            case "Finish": // final object TODO consider removing this, since track will be permanently generated
                 gameController.GameOver(false);
+                break;
+            case "Tile": // each of the tiles
+                gameController.passedTiles ++;
+                DestroyObject(other.gameObject);
                 break;
             default:
                 break;
@@ -165,6 +171,9 @@ public class PlayerControl : MonoBehaviour {
     {
         if (lifePoints <= 0)
         {
+            // disable player controls. NOT the object
+            playerInputEnabled = false;
+            // and tell gameController to stop the race
             gameController.GameOver(true);
         }
     }
