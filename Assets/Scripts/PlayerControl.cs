@@ -75,8 +75,8 @@ public class PlayerControl : MonoBehaviour {
 //#endif
         }
         // move the runner
-        rigidbody.velocity = transform.forward * moveVertical * speed;
-        rigidbody.angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
+        GetComponent<Rigidbody>().velocity = transform.forward * moveVertical * speed;
+        GetComponent<Rigidbody>().angularVelocity = new Vector3 (0.0f, moveHorizontal, 0.0f) * speed;
 
         // change the animation to the closest direction available
         setAnimation(); //
@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour {
     void setAnimation()
     {
         string triggerString = "";
-        float rotation = this.rigidbody.rotation.eulerAngles.y;
+        float rotation = this.GetComponent<Rigidbody>().rotation.eulerAngles.y;
         // 0 to 359
         int totalDirections = 8; // allowing now cardinals + diagonals
         int degreesOffset = 0; // compensating the isometic camera
